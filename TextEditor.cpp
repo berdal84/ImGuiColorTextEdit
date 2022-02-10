@@ -327,7 +327,7 @@ void TextEditor::AddUndo(UndoRecord& aValue)
 	}
 }
 
-void TextEditor::SetExternalUndoBuffer(ExternalUndoBufferInterface* aExternalUndoBuffer)
+void TextEditor::SetExternalUndoBuffer(IExternalUndoBuffer* aExternalUndoBuffer)
 {
 	this->mExternalUndoBuffer = aExternalUndoBuffer;
 }

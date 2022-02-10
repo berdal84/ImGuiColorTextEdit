@@ -224,7 +224,7 @@ public:
 		EditorState mAfter;
 	};
 
-	class ExternalUndoBufferInterface
+	class IExternalUndoBuffer
 	{
 	public:
 		virtual void AddUndo(UndoRecord&) = 0;
@@ -313,7 +313,7 @@ public:
 	bool CanRedo() const;
 	void Undo(int aSteps = 1);
 	void Redo(int aSteps = 1);
-	void SetExternalUndoBuffer(ExternalUndoBufferInterface*);
+	void SetExternalUndoBuffer(IExternalUndoBuffer*);
 
 	static const Palette& GetDarkPalette();
 	static const Palette& GetLightPalette();
@@ -364,7 +364,7 @@ private:
 	EditorState mState;
 	UndoBuffer mUndoBuffer;
 	int mUndoIndex;
-	ExternalUndoBufferInterface* mExternalUndoBuffer;
+	IExternalUndoBuffer* mExternalUndoBuffer;
 
 	int mTabSize;
 	bool mOverwrite;
