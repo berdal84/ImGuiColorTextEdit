@@ -315,6 +315,8 @@ public:
 	void Redo(int aSteps = 1);
 	void SetExternalUndoBuffer(IExternalUndoBuffer*);
 
+	size_t Size() const;
+
 	static const Palette& GetDarkPalette();
 	static const Palette& GetLightPalette();
 	static const Palette& GetRetroBluePalette();
