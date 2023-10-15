@@ -2521,6 +2521,16 @@ TextEditor::UndoRecord::UndoRecord(
 	assert(mRemovedStart <= mRemovedEnd);
 }
 
+size_t TextEditor::Size() const
+{
+    size_t size = 0;
+    for(auto& eachLine: mLines)
+    {
+        size += eachLine.size();
+    }
+    return size;
+}
+
 TextEditor::UndoRecord::UndoRecord(const UndoRecord& undoRecord)
 	: mAdded(undoRecord.mAdded)
 	, mAddedStart(undoRecord.mAddedStart)
